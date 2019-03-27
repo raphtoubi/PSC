@@ -1,15 +1,9 @@
-
-
-
-
-
 import logging
 import numpy as np
 import pywt;
 from scipy.fftpack import fft;
 import cv2
 import skin_detector
-
 
 
 (major_ver, minor_ver, subminor_ver) = (cv2.__version__).split('.')
@@ -46,7 +40,6 @@ def getFaceBox(image):
     return (correspFace[0], correspFace[1], correspFace[2], correspFace[3])
 
 
-
 def waveTransform2(wavelet, data):
     res = pywt.dwt2(data, wavelet);
     return res[0][0][0];
@@ -62,21 +55,13 @@ def fourierTransform(data):
     return liste2;
 
 
-
-
-
-
-
 ##initialisation Alexian
-
 m = 100
 i = 0
 tabfreqmax = [];
 data1 = [];
 data2 = [];
 data3 = [];
-
-
 
 
 def detecteur_de_peau(video, debug=False):
