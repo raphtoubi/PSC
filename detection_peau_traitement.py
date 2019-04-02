@@ -37,6 +37,10 @@ def getFaceBox(image):
             break
     if type(correspFace) == type(None):
         return (0, 0, 0, 0)
+    proportion = 0.3
+    correspFace[0] = correspFace[0]+correspFace[2]*(1-proportion)/2
+    correspFace[2] = correspFace[2]*proportion
+    correspFace[3] = correspFace[3]*proportion
     return (correspFace[0], correspFace[1], correspFace[2], correspFace[3])
 
 
